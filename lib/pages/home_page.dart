@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:medical_app_ui/util/category_card.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -125,16 +126,38 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 25,),
 
             //search bar
-            Container(
-              decoration: BoxDecoration(color: Colors.deepPurple[100]),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(color: Colors.deepPurple[100],
+                borderRadius: BorderRadius.circular(12),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    border: InputBorder.none,
+                    hintText: 'How can we help you',
+                  ),
                 ),
               ),
             ),
-            //horizontal listview -> categories: dentist, surgeon etc...
 
+            SizedBox(height: 25,),
+
+            //horizontal listview -> categories: dentist, surgeon etc...
+            Container(
+              height: 80,
+              child: ListView(
+                scrollDirection: Axis.horizontal, 
+                children: [
+                  CategoryCard(),
+                  CategoryCard(),
+                  CategoryCard(),
+              ],
+
+              ),
+            ),
             //doctor list
           ],
         ),
