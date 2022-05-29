@@ -120,10 +120,19 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-            )
+            ),
+
+            SizedBox(height: 25,),
 
             //search bar
-
+            Container(
+              decoration: BoxDecoration(color: Colors.grey[400]),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
             //horizontal listview -> categories: dentist, surgeon etc...
 
             //doctor list
