@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CategoryCard extends StatelessWidget {
-  final icon;
+  final iconImagePath;
   final String categoryName;
 
   CategoryCard({
-    required this.icon,
+    required this.iconImagePath,
     required this.categoryName,
   });
 
@@ -21,13 +21,13 @@ class CategoryCard extends StatelessWidget {
         child: Row(
           children: [
             Image.asset(
-              'lib/icons/tooth.png',
+              iconImagePath,
               height: 30,
             ),
             SizedBox(
               width: 10,
             ),
-            Text('Dentist'),
+            Text(categoryName),
           ],
         ),
       ),

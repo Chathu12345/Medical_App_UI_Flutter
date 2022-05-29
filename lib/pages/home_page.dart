@@ -68,8 +68,9 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Container(
                 padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(color: Colors.pink[100],
-                borderRadius: BorderRadius.circular(12),
+                decoration: BoxDecoration(
+                  color: Colors.pink[100],
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
                   children: [
@@ -95,14 +96,18 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 16,
                             ),
                           ),
-                          SizedBox(height: 12,),
+                          SizedBox(
+                            height: 12,
+                          ),
                           Text(
                             'Fill out your medical card right now',
                             style: TextStyle(
                               fontSize: 14,
                             ),
-                            ),
-                            SizedBox(height: 12,),
+                          ),
+                          SizedBox(
+                            height: 12,
+                          ),
                           Container(
                             padding: EdgeInsets.all(12),
                             decoration: BoxDecoration(
@@ -112,7 +117,8 @@ class _HomePageState extends State<HomePage> {
                             child: Center(
                               child: Text(
                                 'Get Started',
-                                style: TextStyle(color: Colors.white),),
+                                style: TextStyle(color: Colors.white),
+                              ),
                             ),
                           )
                         ],
@@ -123,15 +129,18 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            SizedBox(height: 25,),
+            SizedBox(
+              height: 25,
+            ),
 
             //search bar
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Container(
                 padding: EdgeInsets.all(12),
-                decoration: BoxDecoration(color: Colors.deepPurple[100],
-                borderRadius: BorderRadius.circular(12),
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple[100],
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: TextField(
                   decoration: InputDecoration(
@@ -143,22 +152,83 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            SizedBox(height: 25,),
+            SizedBox(
+              height: 25,
+            ),
 
             //horizontal listview -> categories: dentist, surgeon etc...
             Container(
               height: 80,
               child: ListView(
-                scrollDirection: Axis.horizontal, 
+                scrollDirection: Axis.horizontal,
                 children: [
-                  CategoryCard(),
-                  CategoryCard(),
-                  CategoryCard(),
-              ],
-
+                  CategoryCard(
+                    categoryName: 'Dentist',
+                    iconImagePath: 'lib/icons/tooth.png',
+                  ),
+                  CategoryCard(
+                    categoryName: 'Surgeon',
+                    iconImagePath: 'lib/icons/surgeon.png',
+                  ),
+                  CategoryCard(
+                    categoryName: 'Pharmacist',
+                    iconImagePath: 'lib/icons/pills.png',
+                  ),
+                ],
               ),
             ),
+
+            SizedBox(
+              height: 25,
+            ),
             //doctor list
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Doctors List',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  Text('See all',
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[600],
+                    ),),
+                ],
+              ),
+            ),
+             SizedBox(
+              height: 25,
+            ),
+
+            Container(
+              color: Colors.deepPurple[100],
+              child: Column(children: [
+                //picture of doctor
+                Image.asset('lib/images/doc1.jpg',
+                height: 40,),
+
+                //rating out of 5
+                Row(
+                  children: [
+                    Icon(Icons.star),
+                    Text('4.9'),
+                  ],
+                ),
+
+                //doctor name
+                Text('Dr. Arlene McCoy'),
+              
+                //doctor title
+                Text('Therapist, 7 years of experience')
+              ],),
+            ),
           ],
         ),
       ),
