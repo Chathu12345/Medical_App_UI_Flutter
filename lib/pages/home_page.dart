@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
 
             //search bar
             Container(
-              decoration: BoxDecoration(color: Colors.grey[400]),
+              decoration: BoxDecoration(color: Colors.deepPurple[100]),
               child: TextField(
                 decoration: InputDecoration(
                   border: InputBorder.none,
