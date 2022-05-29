@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:medical_app_ui/util/category_card.dart';
+import 'package:medical_app_ui/util/doctor_card.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -194,41 +195,29 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 20,
                     ),
                   ),
-                  Text('See all',
-                  style: TextStyle(
+                  Text(
+                    'See all',
+                    style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey[600],
-                    ),),
+                    ),
+                  ),
                 ],
               ),
             ),
-             SizedBox(
+            SizedBox(
               height: 25,
             ),
 
-            Container(
-              color: Colors.deepPurple[100],
-              child: Column(children: [
-                //picture of doctor
-                Image.asset('lib/images/doc1.jpg',
-                height: 40,),
-
-                //rating out of 5
-                Row(
-                  children: [
-                    Icon(Icons.star),
-                    Text('4.9'),
-                  ],
-                ),
-
-                //doctor name
-                Text('Dr. Arlene McCoy'),
-              
-                //doctor title
-                Text('Therapist, 7 years of experience')
-              ],),
-            ),
+            Expanded(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                DoctorCard(),
+                ],
+              ),
+            )
           ],
         ),
       ),
