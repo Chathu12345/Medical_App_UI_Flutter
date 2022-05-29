@@ -67,14 +67,16 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Container(
                 padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(color: Colors.pink[100]),
+                decoration: BoxDecoration(color: Colors.pink[100],
+                borderRadius: BorderRadius.circular(12),
+                ),
                 child: Row(
                   children: [
                     //animation or picture
                     Container(
                       height: 100,
                       width: 100,
-                      color: Colors.deepPurple,
+                      color: Colors.deepPurple[200],
                     ),
                     SizedBox(
                       width: 20,
@@ -92,14 +94,14 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 16,
                             ),
                           ),
-                          SizedBox(height: 8,),
+                          SizedBox(height: 12,),
                           Text(
                             'Fill out your medical card right now',
                             style: TextStyle(
                               fontSize: 14,
                             ),
                             ),
-                            SizedBox(height: 8,),
+                            SizedBox(height: 12,),
                           Container(
                             padding: EdgeInsets.all(12),
                             decoration: BoxDecoration(
