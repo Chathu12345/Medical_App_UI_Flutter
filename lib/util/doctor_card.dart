@@ -3,7 +3,17 @@
 import 'package:flutter/material.dart';
 
 class DoctorCard extends StatelessWidget {
-  const DoctorCard({Key? key}) : super(key: key);
+  final String doctorImagePath;
+  final String rating;
+  final String doctorName;
+  final String doctorProfession;
+
+  DoctorCard({
+    required this.doctorImagePath,
+    required this.rating,
+    required this.doctorName,
+    required this.doctorProfession,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,29 +24,53 @@ class DoctorCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.deepPurple[100],
           borderRadius: BorderRadius.circular(12),
-          ),
+        ),
         child: Center(
           child: Column(
             children: [
               //picture of doctor
-              Image.asset(
-                'lib/images/doc1.jpg',
-                height: 100,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  doctorImagePath,
+                  height: 100,
+                ),
+              ),
+              SizedBox(
+                height: 10,
               ),
 
               //rating out of 5
               Row(
                 children: [
-                  Icon(Icons.star),
-                  Text('4.9'),
+                  Icon(
+                    Icons.star,
+                    color: Colors.yellow[600],
+                  ),
+                  Text(
+                    rating,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
 
+              SizedBox(
+                height: 10,
+              ),
+
               //doctor name
-              Text('Dr. Arlene McCoy'),
+              Text(
+                doctorName,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+              SizedBox(
+                height: 5,
+              ),
 
               //doctor title
-              Text('Therapist, 7 years of experience')
+              Text(doctorProfession + '7 y.e')
             ],
           ),
         ),

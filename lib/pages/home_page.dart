@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:medical_app_ui/util/category_card.dart';
 import 'package:medical_app_ui/util/doctor_card.dart';
 
@@ -79,7 +80,8 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       height: 100,
                       width: 100,
-                      color: Colors.deepPurple[200],
+                      child: Lottie.network(
+                          'https://assets5.lottiefiles.com/packages/lf20_tutvdkg0.json'),
                     ),
                     SizedBox(
                       width: 20,
@@ -211,11 +213,31 @@ class _HomePageState extends State<HomePage> {
             ),
 
             Expanded(
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                DoctorCard(),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    DoctorCard(
+                      doctorImagePath: 'lib/images/doc1.jpg',
+                      rating: '4.9',
+                      doctorName: 'Dr. Ganesh Gupta',
+                      doctorProfession: 'Therapist',
+                    ),
+                    DoctorCard(
+                      doctorImagePath: 'lib/images/doc2.jpg',
+                      rating: '4.4',
+                      doctorName: 'Dr. Mitch Koko',
+                      doctorProfession: 'Psychologist',
+                    ),
+                    DoctorCard(
+                      doctorImagePath: 'lib/images/doc3.jpg',
+                      rating: '5.0',
+                      doctorName: 'Dr. Steve Adams',
+                      doctorProfession: 'Surgeon',
+                    ),
+                  ],
+                ),
               ),
             )
           ],
